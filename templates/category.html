@@ -1,0 +1,47 @@
+<html>
+<head>
+</head>
+
+<body>
+<a href="{{ url_for('catalog') }}">Home</a>
+<h1>{{category.name}}</h1>
+<a href="{{url_for('category_json', category_id=category.id) }}">json</a>
+<!--{% with messages = get_flashed_messages() %}-->
+<!--{% if messages %}-->
+<!--{% for message in messages %}-->
+<!--<ul>-->
+    <!--<li> <strong> {{ message }} </strong> </li>-->
+<!--</ul>-->
+<!--{% endfor %}-->
+<!--{% endif %}-->
+<!--{% endwith %}-->
+<h3><a href="{{ url_for('new_item', category_id=category.id) }}">New Item</a></h3>
+
+
+{% for i in items %}
+
+<br>
+
+<p>{{i.name}}</p>
+
+<p>{{i.description}}</p>
+
+<p> {{i.price}} </p>
+
+<a href="{{url_for('edit_item', category_id = category.id, item_id = i.id) }}">Edit</a>
+
+</br>
+
+<a href="{{url_for('delete_item', category_id = category.id, item_id = i.id) }}">Delete</a>
+
+</br>
+<a href="{{url_for('item_json', category_id = category.id, item_id = i.id) }}">json</a>
+<hr>
+
+</div>
+
+
+{% endfor %}
+</body>
+
+</html>
