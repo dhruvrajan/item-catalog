@@ -6,15 +6,15 @@
 <a href="{{ url_for('catalog') }}">Home</a>
 <h1>{{category.name}}</h1>
 <a href="{{url_for('category_json', category_id=category.id) }}">json</a>
-<!--{% with messages = get_flashed_messages() %}-->
-<!--{% if messages %}-->
-<!--{% for message in messages %}-->
-<!--<ul>-->
-    <!--<li> <strong> {{ message }} </strong> </li>-->
-<!--</ul>-->
-<!--{% endfor %}-->
-<!--{% endif %}-->
-<!--{% endwith %}-->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<ul>
+    <li> <strong> {{ message }} </strong> </li>
+</ul>
+{% endfor %}
+{% endif %}
+{% endwith %}
 <h3><a href="{{ url_for('new_item', category_id=category.id) }}">New Item</a></h3>
 
 

@@ -1,2 +1,5 @@
 *.idea
 *.iml
+*.pyc
+*.db
+client_secrets.json
