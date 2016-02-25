@@ -29,7 +29,7 @@ class CatalogAccess:
         """Edit the name of a restaurant given its id
         """
         print("Editing Restaurant: ", id, name)
-        self.session.query(Category).filter(Restaurant.id == id). \
+        self.session.query(Category).filter(Category.id == id). \
             update({Restaurant.name: name})
         self.session.commit()
 

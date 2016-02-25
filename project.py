@@ -1,5 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, \
-    jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from database_setup import Base, Category, Item
